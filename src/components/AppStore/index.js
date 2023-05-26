@@ -349,6 +349,17 @@ class AppStore extends Component {
               className="search-icon"
             />
           </div>
+          <ul className="tabs-list">
+            {tabsList.map(eachTab => (
+              <TabItem
+                key={eachTab.tabId}
+                tabDetails={eachTab}
+                setActiveTabId={this.setActiveTabId}
+                isActive={activeTabId === eachTab.tabId}
+              />
+            ))}
+          </ul>
+
           <ul className="apps-list">
             {filteredApps.map(eachApp => (
               <AppItem key={eachApp.appId} appDetails={eachApp} />
